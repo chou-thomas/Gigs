@@ -1,0 +1,71 @@
+<div ng-controller = 'usersController'>
+ <div class="row">
+  <div class="col m6">
+    <h4>Musician Register</h4>
+    <p ng-bind = 'err'></p>
+    <div ng-repeat = "error in errors">
+      <p ng-bind = 'error.message'> </p>
+    </div>
+    <form>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="username" type="text" ng-model="new_user.username" class="validate" minlength="2">
+          <label for="username">Username</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="email" type="email" ng-model="new_user.email" class="validate" minlength="5">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="instrument" type="text" ng-model="new_user.instrument" class="validate" minlength="2">
+          <label for="instrument">Instrument</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" ng-model="new_user.password" class="validate" minlength="8">
+          <label for="password">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="confirm_password" type="password" ng-model="new_user.confirm_password" class="validate" minlength="8">
+          <label for="confirm_password">Confirm Password</label>
+        </div>
+      </div>
+      <div class="input-field right">
+        <button ng-click='addUser()' class="btn">Register</button>
+      </div>
+    </form>
+  </div>
+ </div>
+</div>
+
+<div ng-controller = 'bookersController'>
+  <div class="row">
+  <div class="col m6">
+    <h4>Booker Register</h4>
+    <div ng-repeat = "error in errors">
+      <p ng-bind = 'error.message'> </p>
+    </div>
+    <form>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="username" type="text" ng-model="new_booker.username" class="validate" minlength="2">
+          <label for="username">Username</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="email" type="email" ng-model="new_booker.email" class="validate" minlength="5">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" ng-model="new_booker.password" class="validate" minlength="8">
+          <label for="password">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="confirm_password" type="password" ng-model="new_booker.confirm_password" class="validate" minlength="8">
+          <label for="confirm_password">Confirm Password</label>
+        </div>
+      </div>
+      <div class="input-field right">
+        <button ng-click='addBooker()' class="btn">Register</button>
+      </div>
+    </form>
+  </div>
+ </div>

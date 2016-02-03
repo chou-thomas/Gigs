@@ -1,0 +1,61 @@
+<div ng-app = 'myApp' ng-controller = 'gigController'>
+	<div id = 'side'>
+		<h4>Post Your Gigs!</h4>
+		<div>
+			Search for Gigs! <input placeholder=' name...' type = 'text' ng-model = 'filter_username'>
+		</div><br><br><br>
+		<a href="#/"><button>Log Out<button></a>
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Date Available</th>
+				<th>Time Availability</th>
+				<th>Musician Name</th>
+				<th>Instrument</th>
+				<th>Message</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+		<tbody ng-repeat = "gig in gigs | filter: { username: filter_username }">
+			<tr>
+				<td ng-bind = "gig.date | date : 'mediumDate'"></td>
+				<td ng-bind = 'gig.availability'></td>
+				<td ng-bind = 'gig.username'></td>
+				<td ng-bind = 'gig.instrument'></td>
+				<td ng-bind = 'gig.message'></td>
+				<td> <button ng-click='deleteGig(gig._id)'>Delete</button> </td>
+			<tr>
+		</tbody>
+	</table>
+<!-- </div> -->
+<!-- <div ng-app = 'myApp' ng-controller = 'gigController'> -->
+	<div id = 'side'  class ='col-md-3 col-sm-3'>
+		
+		<h4>Add Gigs</h4>
+		<form>
+			Date Available <input type = 'text' name = 'dob' ng-model = 'new_gig.date'><br><br>
+			
+			Time Availability: <select ng-model = 'new_gig.availability'>
+				<option value="8 AM">8AM</option>
+				<option value="9 AM">9AM</option>
+				<option value="10 AM">10AM</option>
+				<option value="11 AM">11AM</option>
+				<option value="12 PM">12PM</option>
+				<option value="1 PM">1PM</option>
+				<option value="2 PM">2PM</option>
+				<option value="3 PM">3PM</option>
+				<option value="4 PM">4PM</option>
+				<option value="5 PM">5PM</option>
+			</select><br><br>
+			Musician Name: <textarea  rows = '1' cols = '10' ng-model = 'new_gig.username'></textarea><br><br>
+			Instrument: <textarea  rows = '1' cols = '10' ng-model = 'new_gig.instrument'></textarea><br><br>
+			Message: <textarea  rows = '4' cols = '20' ng-model = 'new_gig.message'></textarea><br><br>
+			<input type = 'submit' value = 'Add' ng-click ='addGig()'>
+			
+		</form><br><br>
+	</div>
+</div>
+
