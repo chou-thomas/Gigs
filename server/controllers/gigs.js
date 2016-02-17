@@ -26,7 +26,7 @@ module.exports = {
 		console.log(gig);
 		Gig.find({username: req.body.username}, function(err, gigs){
 			if(err){} 
-				if(gigs[1]){
+				if(gigs[0]){
 				res.json({'msg': 'gig already exists'});
 			} 
 			else {

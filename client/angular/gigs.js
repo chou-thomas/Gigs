@@ -4,9 +4,7 @@ myApp.factory('gigFactory',function($http){
 
 	factory.getGigs = function (callback){
 		$http.get('/gigs').success(function(output){
-			console.log(output);
 				callback(output);
-				console.log(output);
 			})	
 		}
 
